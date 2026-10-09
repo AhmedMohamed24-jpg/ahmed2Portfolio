@@ -2,6 +2,7 @@
 
 
 
+
 /* ======          Loading Screen   =========== Preloader Logic ================= */
 window.addEventListener('load', function() {
     // 1000 مللي ثانية يعني ثانية واحدة بالظبط
@@ -12,9 +13,6 @@ window.addEventListener('load', function() {
         }
     }, 2400); 
 });
-
-
-
 
 
 

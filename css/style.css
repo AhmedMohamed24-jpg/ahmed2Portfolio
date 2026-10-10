@@ -7,8 +7,8 @@
 }
 
 :root {
-    --primary-color: #f39c12; /* اللون البرتقالي */
-    --bg-color: #111114; /* لون الخلفية الداكن */
+    --primary-color: #f39c12; 
+    --bg-color: #111114; 
     --text-gray: #a0a0a0;
 }
 
@@ -16,7 +16,7 @@ body {
     background-color: var(--bg-color);
     color: #ffffff;
     overflow-x: hidden;
-    /* إضاءة خفيفة في زوايا الشاشة زي الصورة */
+
     background-image: 
         radial-gradient(circle at 5% 85%, rgba(243, 156, 18, 0.05) 0%, transparent 40%),
         radial-gradient(circle at 95% 15%, rgba(243, 156, 18, 0.05) 0%, transparent 40%);
@@ -26,22 +26,21 @@ body {
 
 
 
-/* تنسيق زرار العودة للأعلى ليظل ثابتاً في أسفل اليمين وبألوان الموقع */
+
 .top-btn {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    z-index: 1000; /* عشان يفضل ظاهر فوق أي عناصر تانية في الصفحة */
+    z-index: 1000; 
 }
 
-/* تنسيق شكل الزرار والأيقونة بداخله */
 .top-btn button {
     width: 55px;
     height: 55px;
     border: none;
     border-radius: 50%; 
-    background-color: #ff9800; /* لون برتقالي ماشي مع ألوان الموقع (تقدر تغيره للدرجة الدقيقية بتاعتك) */
-    color: #121212; /* لون السهم غامق عشان يبان بشكل واضح وجميل مع الخلفية البرتقالية */
+    background-color: #ff9800; 
+    color: #121212; 
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -50,11 +49,10 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* تأثير لما تقف بالماوس على الزرار */
 .top-btn button:hover {
-    background-color: #e68a00; /* درجة برتقالية أغمق سنة عند الـ Hover */
-    transform: translateY(-4px); /* حركة خفيفة لفوق */
-    box-shadow: 0 6px 16px rgba(255, 152, 0, 0.3); /* ظل برتقالي خفيف ومتناسق */
+    background-color: #e68a00;
+    transform: translateY(-4px); 
+    box-shadow: 0 6px 16px rgba(255, 152, 0, 0.3); 
 }
 
 
@@ -258,7 +256,7 @@ body {
     z-index: 2;
     padding: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* --- التعديل المضاف: حركة العوم الملموسة للصورة --- */
+
     animation: heroFloat 4s ease-in-out infinite;
 }
 
@@ -310,7 +308,7 @@ body {
     z-index: 5;
 }
 
-/* --- Floating Badge --- */
+
 .badge {
     position: absolute;
     top: 30px;
@@ -324,14 +322,13 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     z-index: 10;
     border: 1px solid #333;
-    /* --- التعديل المضاف: حركة عوم متناسقة للـ Badge --- */
     animation: badgeFloat 5s ease-in-out infinite;
 }
 
 .dot {
     width: 10px;
     height: 10px;
-    background-color: #8bc34a; /* اللون الأخضر للنقطة */
+    background-color: #8bc34a; 
     border-radius: 50%;
     box-shadow: 0 0 10px #8bc34a;
 }
@@ -434,7 +431,7 @@ body {
     }
 
     .hero {
-        flex-direction: column-reverse; /* الصورة فوق والنص تحت */
+        flex-direction: column-reverse; 
         text-align: center;
         gap: 80px;
         padding: 50px 5%;
@@ -502,11 +499,42 @@ body {
 
 
 
+/* ================= Fade Up Animation ================= */
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+    
+}
+
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0); 
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ================= About Section ================= */
 /* ================= About Section ================= */
 .about-section {
-    background-color: var(--bg-color); /* نفس لون الخلفية الغامق اللي استخدمناه في الأول */
+    background-color: var(--bg-color); 
+    
     padding: 80px 8%;
     min-height: 100vh;
     display: flex;
@@ -547,7 +575,8 @@ body {
     height: 380px;
     border-radius: 50%;
     padding: 10px;
-    border: 2px solid rgba(243, 156, 18, 0.3); /* إطار برتقالي خفيف */
+    border: 2px solid rgba(243, 156, 18, 0.3); 
+    
     z-index: 2;
     background-color: #111114;
 }
@@ -775,7 +804,8 @@ body {
 /* ================= Responsive (Mobile & Tablet) ================= */
 @media (max-width: 1200px) {
     .info-cards {
-        grid-template-columns: repeat(2, 1fr); /* كارتين في كل صف في الشاشات المتوسطة */
+        grid-template-columns: repeat(2, 1fr); 
+        
     }
 }
 
@@ -820,7 +850,8 @@ body {
     }
 
     .info-cards {
-        grid-template-columns: 1fr; /* كارت واحد في كل صف في الموبايل */
+        grid-template-columns: 1fr; 
+        
     }
 
     .floating-badge {
@@ -1058,7 +1089,8 @@ body {
 /* ================= Responsive ================= */
 @media (max-width: 1024px) {
     .education-grid {
-        grid-template-columns: 1fr; /* يقلبوا تحت بعض في الشاشات المتوسطة والموبايل */
+        grid-template-columns: 1fr; 
+        
     }
 }
 
@@ -1079,7 +1111,8 @@ body {
     }
 
     .train-list {
-        text-align: left; /* يفضل النص ظابط من الشمال في الليست للموبايل */
+        text-align: left; 
+        
     }
 
     .decor-dots-edu {
@@ -1258,19 +1291,19 @@ left: 45px;
 /* ================= Responsive ================= */
 @media (max-width: 1200px) {
     .skills-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 كروت في الصف للشاشات المتوسطة */
+        grid-template-columns: repeat(4, 1fr); 
     }
 }
 
 @media (max-width: 900px) {
     .skills-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 كروت في الصف للتابلت */
+        grid-template-columns: repeat(3, 1fr); 
     }
 }
 
 @media (max-width: 600px) {
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr); /* كارتين في الصف للموبايل */
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     .skills-section .title {
@@ -1657,15 +1690,16 @@ left: 45px;
     background-color: rgba(243, 156, 18, 0.05);
 }
 
-/* --- Projects Grid (استخدام Flexbox لسنترة الكروت تلقائياً سواء كانوا 3 أو 4) --- */
+
 .projects-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* سنترة الكروت في المنتصف تماماً */
+    justify-content: center;
     gap: 20px;
 }
 
-/* --- Project Card (إعطاء عرض ثابت ومحدد للكارت ليكونوا متطابقين تماماً) --- */
+
+
 .project-card {
     background-color: #0a0e17;
     border: 1px solid #1a233a;
@@ -1674,8 +1708,8 @@ left: 45px;
     transition: 0.4s;
     display: flex;
     flex-direction: column;
-    width: calc(25% - 15px); /* يجعل 4 كروت بجانب بعضها بدقة مع حساب الـ gap */
-    min-width: 280px; /* لضمان عدم انكماشها بشكل مبالغ فيه في الشاشات الأصغر */
+    width: calc(25% - 15px); 
+    min-width: 280px; 
 }
 
 .project-card:hover {
@@ -1763,7 +1797,7 @@ left: 45px;
 /* ================= Responsive ================= */
 @media (max-width: 1200px) {
     .project-card {
-        width: calc(50% - 15px); /* في الشاشات المتوسطة يصبح كارتين بجانب بعضهما */
+        width: calc(50% - 15px); 
     }
 }
 
@@ -1773,7 +1807,7 @@ left: 45px;
     }
     
     .project-card {
-        width: 100%; /* في الموبايل كارت واحد يملأ العرض */
+        width: 100%; 
     }
 
     .decor-dots-proj {
@@ -1791,11 +1825,8 @@ left: 45px;
 
 
 
-/* --- إعدادات الموبايل (Responsive Design) --- */
-
 @media (max-width: 768px) {
-    
-    /* 1. الناف بار: نخليه يترتب عمودياً أو يختفي */
+
     .nav1 {
         height: auto;
         flex-direction: column;
@@ -1809,14 +1840,14 @@ left: 45px;
         padding: 0;
     }
 
-    /* 2. الهيرو سكشن (الصورة والكلام) */
+
     .color {
-        flex-direction: column-reverse; /* الصورة فوق والكلام تحت أو العكس */
+        flex-direction: column-reverse; 
         align-items: center;
         text-align: center;
     }
     .content h1 {
-        transform: translateX(0); /* نلغي الإزاحة عشان ميتحدفش يمين */
+        transform: translateX(0); 
         margin-top: 20px;
     }
     .content p {
@@ -1824,14 +1855,14 @@ left: 45px;
         margin-left: 0;
     }
     .content button {
-        margin-left: 0; /* سنتر الزرار */
+        margin-left: 0;
     }
     .prtofil-img img {
-        width: 250px; /* نصغر الصورة في الموبايل */
+        width: 250px;
         height: 250px;
     }
 
-    /* 3. سكشن About Me */
+ 
     .section2 {
         flex-direction: column;
         height: auto;
@@ -1848,11 +1879,10 @@ left: 45px;
         height: 200px;
     }
     .Aboutme h2, .projectss h2, .con h2, .ski h2 {
-        margin-left: 0; /* سنتر العناوين */
+        margin-left: 0; 
         text-align: center;
     }
 
-    /* 4. سكشن المشاريع */
     .section3 {
         flex-direction: column;
         height: auto;
@@ -1864,9 +1894,8 @@ left: 45px;
         margin-top: 20px;
     }
 
-    /* 5. المهارات */
     .skalls {
-        flex-wrap: wrap; /* الصور تنزل تحت بعض لو المساحة مفيش */
+        flex-wrap: wrap; 
         height: auto;
         padding: 40px;
         gap: 20px;
@@ -1875,7 +1904,6 @@ left: 45px;
         margin-top: 20px;
     }
 
-    /* 6. الفورم (Contact) */
     .contacts {
         flex-direction: column;
         height: auto;
@@ -1898,7 +1926,6 @@ left: 45px;
         margin-right: auto;
     }
 
-    /* 7. الفوتر */
     .linked {
         margin-left: 0;
         text-align: center;
@@ -1929,7 +1956,7 @@ left: 45px;
 
 /* ================= Testimonials Section ================= */
 .testimonials-section {
-    background-color: #070c18; /* لون الخلفية الكحلي الغامق جداً */
+    background-color: #070c18; 
     padding: 100px 8%;
     min-height: 100vh;
     position: relative;
@@ -1944,7 +1971,6 @@ left: 45px;
     z-index: 2;
 }
 
-/* --- التأثيرات الجمالية في الخلفية --- */
 .testi-glow-left, .testi-glow-right {
     position: absolute;
     top: 20%;
@@ -1982,7 +2008,7 @@ left: 45px;
 .testi-dots.dots-left { top: 15%; left: 5%; }
 .testi-dots.dots-right { top: 25%; right: 5%; }
 
-/* --- تصميم العنوان (Header) --- */
+/* ---  (Header) --- */
 .testi-header {
     text-align: center;
     margin-bottom: 60px;
@@ -2033,17 +2059,17 @@ left: 45px;
     margin: 0 auto;
 }
 
-/* --- تصميم شبكة الكروت --- */
+
 .testi-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-/* --- تصميم الكارت نفسه --- */
+
 .testi-card {
     background-color: #0d1627;
-    border: 1px solid #00a8ff; /* الإطار الأزرق النيون */
+    border: 1px solid #00a8ff; 
     border-radius: 12px;
     padding: 30px;
     position: relative;
@@ -2081,7 +2107,7 @@ left: 45px;
 }
 
 .client-name {
-    color: #00a8ff; /* اللون الأزرق الفاتح للاسم */
+    color: #00a8ff; 
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 2px;
@@ -2105,10 +2131,9 @@ left: 45px;
     font-size: 14px;
     line-height: 1.7;
     margin-bottom: 30px;
-    flex-grow: 1; /* عشان الكروت تبقى نفس الطول حتى لو النص مختلف */
+    flex-grow: 1; 
 }
 
-/* --- الخط الذهبي المضيء أسفل الكارت --- */
 .testi-card .card-glow-line {
     position: absolute;
     bottom: 25px;
@@ -2119,14 +2144,13 @@ left: 45px;
     box-shadow: 0 0 10px #f39c12;
 }
 
-/* --- الوضع الفاتح (Light Mode) لو حبيت يشتغل مع زرار الـ Theme --- */
 body.light-mode .testimonials-section { background-color: #f8fafc !important; }
 body.light-mode .testi-card { background-color: #ffffff; border-color: #00a8ff; }
 body.light-mode .testi-title { color: #0f172a; }
 body.light-mode .testi-desc, body.light-mode .client-role { color: #475569; }
 body.light-mode .client-review { color: #334155; }
 
-/* --- Responsive (عشان يظبط على الموبايل والتابلت) --- */
+/* --- Responsive  --- */
 @media (max-width: 1024px) {
     .testi-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -2141,6 +2165,16 @@ body.light-mode .client-review { color: #334155; }
         font-size: 35px;
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2491,6 +2525,13 @@ body.light-mode .client-review { color: #334155; }
 
 
 
+
+
+
+
+
+
+
 /* ================= Footer Section ================= */
 .footer-section {
     background-color: #050b14;
@@ -2507,7 +2548,7 @@ body.light-mode .client-review { color: #334155; }
     height: 150px;
     background: linear-gradient(135deg, #070e1b, #040812);
     border: 1px solid #142a54;
-    border-radius: 25px; /* حواف دائرية فخمة مطابقة للصورة */
+    border-radius: 25px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2516,7 +2557,6 @@ body.light-mode .client-review { color: #334155; }
     overflow: hidden;
 }
 
-/* --- الإضاءات والخطوط الجانبية --- */
 .footer-glow-line-left {
     position: absolute;
     left: 80px;
@@ -2537,7 +2577,6 @@ body.light-mode .client-review { color: #334155; }
     box-shadow: 0 0 10px #f39c12;
 }
 
-/* --- نقاط الديكور في الأجناب --- */
 .decor-dots-foot {
     position: absolute;
     width: 40px;
@@ -2551,7 +2590,6 @@ body.light-mode .client-review { color: #334155; }
 .left-dots { left: 30px; }
 .right-dots { right: 30px; }
 
-/* --- الأقواس المضيئة في أطراف الفوتر --- */
 .corner-arc {
     position: absolute;
     width: 50px;
@@ -2585,7 +2623,6 @@ body.light-mode .client-review { color: #334155; }
     margin-bottom: 12px;
 }
 
-/* تنسيق عام لأيقونات السوشيال ميديا داخل الكروت المظللة */
 .lin a {
     display: flex;
     justify-content: center;
@@ -2610,7 +2647,7 @@ body.light-mode .client-review { color: #334155; }
     height: 22px;
     object-fit: contain;
     border-radius: 4px;
-    margin: 0 !important; /* إلغاء أي مارجن قديم عشان يتسنتروا جوه الكارت تماماً */
+    margin: 0 !important; 
 }
 
 /* --- Copyright Text --- */
@@ -2635,9 +2672,12 @@ body.light-mode .client-review { color: #334155; }
         gap: 15px;
     }
     .footer-glow-line-left, .footer-glow-line-right, .corner-arc, .decor-dots-foot {
-        display: none; /* إخفاء الديكورات الجانبية في الشاشات الصغيرة لضمان التناسق */
+        display: none; 
     }
 }
+
+
+
 
 
 
@@ -2670,6 +2710,12 @@ body.light-mode {
 }
 
 
+
+
+
+
+
+
 /* ================= Navbar ================= */
 
 body.light-mode .navbar {
@@ -2692,6 +2738,14 @@ body.light-mode .menu-toggle {
 body.light-mode .theme-toggle {
     color: #111827;
 }
+
+
+
+
+
+
+
+
 
 
 /* ================= Theme Button ================= */
@@ -2717,6 +2771,15 @@ body.light-mode .theme-toggle {
     border-color: var(--primary-color);
     transform: rotate(15deg);
 }
+
+
+
+
+
+
+
+
+
 
 
 /* ================= Hero ================= */
@@ -2778,6 +2841,18 @@ body.light-mode .dots {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* ================= About ================= */
 
 body.light-mode .about-section {
@@ -2827,6 +2902,16 @@ body.light-mode .card {
 body.light-mode .card h4 {
     color: #111827;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 /* ================= Education ================= */
@@ -2887,6 +2972,15 @@ body.light-mode .box-icon {
 }
 
 
+
+
+
+
+
+
+
+
+
 /* ================= Skills ================= */
 
 body.light-mode .skills-section {
@@ -2916,6 +3010,13 @@ body.light-mode .skill-icon {
 body.light-mode .skill-card h3 {
     color: #111827;
 }
+
+
+
+
+
+
+
 
 
 /* ================= Services ================= */
@@ -2960,6 +3061,16 @@ body.light-mode .service-card h3 {
 body.light-mode .service-card p {
     color: #64748b;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 /* ================= Projects ================= */
@@ -3019,6 +3130,12 @@ body.light-mode .view-btn:hover {
 }
 
 
+
+
+
+
+
+
 /* ================= Testimonials ================= */
 
 body.light-mode .testimonials-section {
@@ -3051,6 +3168,16 @@ body.light-mode .client-name {
 body.light-mode .client-review {
     color: #475569;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 /* ================= Contact ================= */
@@ -3145,8 +3272,7 @@ body.light-mode .highlight-name {
 }
 
 
-/* =========================================================
-   ================= MOBILE THEME =========================
+/*  ================= MOBILE THEME =========================
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -3236,7 +3362,6 @@ body.light-mode .highlight-name {
     animation: bounceIcon 1.2s infinite ease-in-out;
 }
 
-/* تنسيق النقاط المتحركة تحت الأيقونة */
 .loader-dots {
     display: flex;
     gap: 8px;
@@ -3264,7 +3389,7 @@ body.light-mode .highlight-name {
     animation-delay: 0s;
 }
 
-/* أنيميشن الموجة للنقاط */
+
 @keyframes waveDots {
     0%, 80%, 100% { 
         transform: scale(0);
@@ -3276,7 +3401,7 @@ body.light-mode .highlight-name {
     }
 }
 
-/* أنيميشن خفيف للأيقونة */
+
 @keyframes bounceIcon {
     0%, 100% {
         transform: translateY(0);

@@ -2,10 +2,8 @@
 
 
 
-
 /* ======          Loading Screen   =========== Preloader Logic ================= */
 window.addEventListener('load', function() {
-    // 1000 مللي ثانية يعني ثانية واحدة بالظبط
     setTimeout(function() {
         const preloader = document.getElementById('preloader');
         if(preloader) {
@@ -13,6 +11,9 @@ window.addEventListener('load', function() {
         }
     }, 2400); 
 });
+
+
+
 
 
 
@@ -72,17 +73,15 @@ document.addEventListener("DOMContentLoaded", function() {
     function showProjects(startIndex, endIndex) {
         projectCards.forEach((card, index) => {
             if (index >= startIndex && index < endIndex) {
-                card.style.display = 'block'; // إظهار الكارت
+                card.style.display = 'block'; 
             } else {
-                card.style.display = 'none'; // إخفاء الكارت
+                card.style.display = 'none'; 
             }
         });
     }
 
-    // 1. أول ما الصفحة تفتح، اعرض أول 3 مشاريع فقط (من الفهرس 0 إلى 2)
     showProjects(0, 3);
 
-    // 2. تفعيل الأزرار
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             filterBtns.forEach(b => b.classList.remove('active'));
@@ -91,15 +90,89 @@ document.addEventListener("DOMContentLoaded", function() {
             const btnText = this.textContent.trim();
 
             if (btnText === 'All') {
-                // عرض أول 3 مشاريع
                 showProjects(0, 3);
             } else if (btnText === 'Other') {
-                // عرض الـ 4 مشاريع المتبقية (من الفهرس 3 إلى 7)
                 showProjects(3, 7);
             }
         });
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= Loading Screen & Hero Animations ================= */
+
+function startHeroAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -20px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible'); 
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const fadeElements = document.querySelectorAll('.fade-up');
+    
+
+    fadeElements.forEach((element, index) => {
+        element.style.transitionDelay = `${index * 0.15}s`;
+        observer.observe(element);
+    });
+}
+
+
+window.addEventListener('load', function() {
+    
+    setTimeout(function() {
+
+        const preloader = document.getElementById('preloader');
+        if(preloader) {
+            preloader.classList.add('hide-preloader');
+        }
+        
+        setTimeout(function() {
+            startHeroAnimations();
+        }, 300);
+
+    }, 2400); 
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

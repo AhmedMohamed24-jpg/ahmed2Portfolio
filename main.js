@@ -1,6 +1,19 @@
 
 
 
+// منع المتصفح من تذكر مكان النزول بعد الريفريش
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+
+// إجبار الصفحة على الرجوع لأعلى نقطة عند التحميل
+window.scrollTo(0, 0);
+
+
+
+
+
+
 
 /* ======          Loading Screen   =========== Preloader Logic ================= */
 window.addEventListener('load', function() {

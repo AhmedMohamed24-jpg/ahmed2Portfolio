@@ -870,6 +870,54 @@ body {
 
 
 
+/* ================= Floating Animation for About Section ================= */
+
+
+.image-wrapper-about {
+    animation: aboutFloat 4s ease-in-out infinite;
+}
+
+
+.badge-top-left {
+    animation: aboutBadgeFloat1 5s ease-in-out infinite;
+}
+
+
+.badge-bottom-right {
+    animation: aboutBadgeFloat2 4.5s ease-in-out infinite;
+}
+
+/* ================= Keyframes for About Section ================= */
+@keyframes aboutFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); 
+    }
+}
+
+@keyframes aboutBadgeFloat1 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px); 
+    }
+}
+
+@keyframes aboutBadgeFloat2 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px); 
+    }
+}
+
+
+
+
 
 
 /* ================= Education & Training Section ================= */

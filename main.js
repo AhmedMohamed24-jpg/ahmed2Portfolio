@@ -333,7 +333,7 @@ langToggle.addEventListener('click', () => {
     setLanguage(newLang);
 });
 
+
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLang') || 'en';
-    setLanguage(savedLang);
+    setLanguage('en');
 });
